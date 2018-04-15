@@ -56,6 +56,17 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
+    elif command == "وش بنك الطالب هذا" or command == "وش هذا بنك الطالب" or command == "وش هذا البوت" or command == "ماهذا البوت":
+        a = "بنك الطالب هو مشروع صغير يخزن المصادر المهمة لبعض المواد الدراسية "\
+            "حالياً لدينا المصادر الخاصة بمادتي تقنيات المصادر المفتوحة 542، وهندسة البرمجيات 323"\
+            ""\
+            "كذلك بنك الطالب يقدم خدمة ذكرني، للتذكير بمواعيد الامتحانات الخاصة بالمود المتاحة للاشتراك"\
+        bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
+        conn = db.create_connection(database)
+        with conn:
+            db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
+                           "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
+                                                                   tim))
     elif command == "نورة":
         a = "اهلا انا لست نورة انا البوت الخاص ببنك الطالب"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
@@ -64,7 +75,7 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
-    elif command == "مادة":
+    elif command == "مادة" or command == "كورس":
         a = "ماهو اسم المادة"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
         conn = db.create_connection(database)
@@ -72,8 +83,8 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
-    elif command == "كورس":
-        a = "ماهو اسم الكورس"
+    elif command == "وش المواد المتاحة مصادرها" or command == "وش المواد الموجودة" or command == "وش الكورسات المتوفرة" or command == "أسماء الكورسات المتاحة":
+        a = "حالياً لدينا المصادر الخاصة بمادتي تقنيات المصادر المفتوحة 542، وهندسة البرمجيات 323"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
         conn = db.create_connection(database)
         with conn:
@@ -81,7 +92,14 @@ def handle(msg):
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username,
                                                                    chat_id,
                                                                    tim))
-
+    elif command == "وش تقصد بالمصادر" or command == "ماذا تعني بالمصادر" or command == "ماهي المصادر اللتي قد أحصل عليها" or command == "زودني بالمصادر":
+        a = "المصادر اللتي نملكها: الكتاب الخاصة بالمادة، توصيف المقرر، الشرائح الخاصة بالدكتور"
+        bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
+        conn = db.create_connection(database)
+        with conn:
+            db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
+                           "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
+                                                                   tim))
     elif command == "547" or command == "IT 547" or command == "IT 547" or command == "Open Source Technology":
         a = "زودني باسم المادة"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
