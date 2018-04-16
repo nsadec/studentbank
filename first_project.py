@@ -48,7 +48,7 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id, time", "'{}','{}','{}','{}', '{}','{}'"
                            .format(subscribe, a, subscribe, chat_username, chat_id, tim))
 
-    elif command == "من أنت":
+    elif command == "من أنت" or command == "من انت":
         a = "أنا البوت الخاص ببنك الطالب لقد قام ببرمجتني الطالبة نورة الوابل كيف ممكن اخدمك "
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
         conn = db.create_connection(database)
@@ -56,6 +56,7 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
+            
     elif command == "وش بنك الطالب هذا" or command == "وش هذا بنك الطالب" or command == "وش هذا البوت" or command == "ماهذا البوت":
         a = "بنك الطالب هو مشروع صغير يخزن المصادر المهمة لبعض المواد الدراسية "\
             "حالياً لدينا المصادر الخاصة بمادتي تقنيات المصادر المفتوحة 542، وهندسة البرمجيات 323"\
@@ -75,6 +76,7 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
+            
     elif command == "مادة" or command == "كورس":
         a = "ماهو اسم المادة"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
@@ -83,6 +85,7 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
+            
     elif command == "وش المواد المتاحة مصادرها" or command == "وش المواد الموجودة" or command == "وش الكورسات المتوفرة" or command == "أسماء الكورسات المتاحة":
         a = "حالياً لدينا المصادر الخاصة بمادتي تقنيات المصادر المفتوحة 542، وهندسة البرمجيات 323"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
@@ -100,6 +103,7 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
+            
     elif command == "وجهني":
         a = "اكتب اسم المقرر الذي تحتاج مصادره"\
             "تقنيات المصادر المفتوحة"\
@@ -110,6 +114,7 @@ def handle(msg):
             db.insert_date(conn, 'bot', "send, mass, type,user,id,time",
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
+            
     elif command == "Open Source" or command == "اوبن سورس" or command == "المصادر المفتوحة" or command == "تقنيات المصادر المفتوحة" or command == "547" or command == "IT 547" or command == "Open Source Technology" :
         a = "حدد المصدر الذي تريده"\
             "توصيف المصادر المفتوحة"\
@@ -140,7 +145,8 @@ def handle(msg):
             
     elif command == "المرجع الخاص بالمصادر المفتوحة" or command == "كتاب الاوبن سورس" or command == "كتاب مقرر المصادر المفتوحة":
         a = "تفضل رابط التحميل" \
-            "http://www.mediafire.com/file/e8rmk9go5enyhfb/Books%20Open%20Source.zip"\
+            "https://drive.google.com/file/d/1kXIkPqUS5My-24HyPgzufUpMoYZkLUHO/view?usp=sharing"\
+            "https://drive.google.com/file/d/1kD3NPdBVlQNc-RNC3iBMtwla0c4YWJzT/view?usp=sharing"\
             ""
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
         conn = db.create_connection(database)
@@ -172,7 +178,7 @@ def handle(msg):
                            "'{}','{}','{}','{}', '{}','{}'".format(Suggestion, a, Suggestion, chat_username, chat_id,
                                                                    tim))
             
-    elif command == "توصيف هندسة البرمجيات" or command == "توصيف سوفتوير" or command == "توصيف مقرر هندسة البرمجيات":
+    elif command == "توصيف هندسة البرمجيات" or command == "توصيف سوفتوير" or command == "توصيف مقرر هندسة البرمجيات" or command == "توصيف المقرر لهندسة البرمجيات":
         a = "يتبع المقرر مقرر هندسة البرامج-1 حيث أنه يستمر في دراسة دورة حياة تطوير البرامج"\ 
             "ستتمكن الطالبات من معاينة والتمكن من المراحل المتبقية من دورة حياة تطوير البرامج. "\
             "بدءا من لمحة مفصلة عن علميات البرمجة ومراجعة ما قد تم تعلمه في المقرر السابق ، "\
