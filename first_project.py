@@ -33,7 +33,7 @@ def handle(msg):
         bot.sendMessage(chat_id, start, reply_markup=json_keyboard)
 
     elif command == "السلام" or command == "السلام عليكم" or command == "السلام عليكم ورحمة الله ويركاته":
-        a = "وعليكم السلام ورحمة الله وبركاته \nأهلا بك تفضل انا أنا البوت الخاص ببنك الطالب\nكيف اقدر أخدمك"
+        a = "وعليكم السلام ورحمة الله وبركاته \nأهلا بك تفضل أنا البوت الخاص ببنك الطالب\nكيف اقدر أخدمك"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
         conn = db.create_connection(database)
         with conn:
