@@ -31,7 +31,7 @@ def handle(msg):
         b = "فضلا قم بإختيار زر الاشتراك للاشتراك في خدمة التذكير بمواعيد الامتحانات"
         start = "{}\t{}\n{}\n{}\n{}\n\n\n\n{}".format(a, chat_username, c, v, b, h)
         bot.sendMessage(chat_id, start, reply_markup=json_keyboard)
-
+        
     elif command == "السلام" or command == "السلام عليكم" or command == "السلام عليكم ورحمة الله ويركاته":
         a = "وعليكم السلام ورحمة الله وبركاته \nأهلا بك تفضل أنا البوت الخاص ببنك الطالب\nكيف اقدر أخدمك"
         bot.sendMessage(chat_id, a, reply_markup=json_keyboard)
